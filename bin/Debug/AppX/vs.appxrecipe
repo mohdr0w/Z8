@@ -16,7 +16,7 @@
     <AppXManifest Include="E:\Development\GitHub\Z8\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-04-07T15:07:02.210</Modified>
+      <Modified>2013-04-11T11:45:07.668</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -30,7 +30,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\pages\groupDetail\groupDetail.css">
       <PackagePath>pages\groupDetail\groupDetail.css</PackagePath>
-      <Modified>2013-04-05T14:02:04.936</Modified>
+      <Modified>2013-04-11T11:44:48.060</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\pages\groupedItems\groupedItems.css">
       <PackagePath>pages\groupedItems\groupedItems.css</PackagePath>
@@ -58,7 +58,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\js\data.js">
       <PackagePath>js\data.js</PackagePath>
-      <Modified>2013-04-05T13:17:44.422</Modified>
+      <Modified>2013-04-11T10:44:14.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\js\default.js">
       <PackagePath>js\default.js</PackagePath>
@@ -86,7 +86,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\pages\groupDetail\groupDetail.html">
       <PackagePath>pages\groupDetail\groupDetail.html</PackagePath>
-      <Modified>2013-04-05T13:20:44.798</Modified>
+      <Modified>2013-04-11T10:58:00.986</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\pages\groupedItems\groupedItems.html">
       <PackagePath>pages\groupedItems\groupedItems.html</PackagePath>
@@ -94,7 +94,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2013-04-05T12:05:04.748</Modified>
+      <Modified>2013-04-11T11:44:48.051</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\Development\GitHub\Z8\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>

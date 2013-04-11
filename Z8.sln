@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows 8
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "Z8", "Z8.jsproj", "{DA77BD3D-0B33-4212-AE76-C5DF03D5A76F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Leistungsberichte", "Leistungsberichte", "{516BF0D0-C806-4137-8C51-9537135F1734}"
+	ProjectSection(SolutionItems) = preProject
+		Report130411.vspx = Report130411.vspx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
