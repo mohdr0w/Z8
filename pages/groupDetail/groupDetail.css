@@ -7,7 +7,7 @@
            an ".win-surface" überschreiben kann. */
 .groupdetailpage .itemslist .win-horizontal.win-viewport .win-surface {
     margin-bottom: 35px;
-    margin-left: 120px;
+    margin-left: 35px;
     margin-right: 120px;
     margin-top: 128px;
 }
@@ -19,16 +19,7 @@
     z-index: 0;
 }
 
-    .groupdetailpage .itemslist .win-groupheader {
-        -ms-grid-columns: 1fr;
-        -ms-grid-rows: auto auto 1fr;
-        display: -ms-grid;
-        height: 100%;
-        margin-left: 0px;
-        margin-right: 43px;
-        padding: 0;
-        width: 480px;
-    }
+    
 
     .groupdetailpage .itemslist.win-rtl .win-groupheader {
         margin-left: 43px;
@@ -60,7 +51,7 @@
 
     .groupdetailpage .itemslist .win-container {
         margin-bottom: 15px;
-        margin-left: 30px;
+        margin-left: 0px;
         margin-right: 30px;
         padding: 7px;
     }
