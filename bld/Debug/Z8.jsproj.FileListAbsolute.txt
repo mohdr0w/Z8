@@ -23,10 +23,6 @@ E:\Dokumente\Visual Studio 2012\Projects\Z8\bld\Debug\ProjectArchitectures.txt
 E:\Development\GitHub\Z8\bin\Debug\resources.pri
 E:\Development\GitHub\Z8\bin\Debug\AppxManifest.xml
 E:\Development\GitHub\Z8\bin\Debug\Z8.build.appxrecipe
-E:\Development\GitHub\Z8\bld\Debug\priconfig.xml.intermediate
-E:\Development\GitHub\Z8\bld\Debug\layout.resfiles.intermediate
-E:\Development\GitHub\Z8\bld\Debug\resources.resfiles.intermediate
-E:\Development\GitHub\Z8\bld\Debug\pri.resfiles.intermediate
 E:\Development\GitHub\Z8\bld\Debug\priconfig.xml
 E:\Development\GitHub\Z8\bld\Debug\layout.resfiles
 E:\Development\GitHub\Z8\bld\Debug\resources.resfiles
