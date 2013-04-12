@@ -30,14 +30,31 @@
             margin-top: 0;
         }
 
+        .itemdetailpage .content article .image-copyright {            
+            width: 460px;
+            text-align: right;
+            font-size: 10px;
+			color: #8f8f8f;
+        }
+
         .itemdetailpage .content article .item-image {
             height: 240px;
             width: 460px;
+        }
+		
+		 .itemdetailpage .content article .image-bu {            
+            width: 460px;            
+            font-size: 13px;
+			color: #8f8f8f;
         }
 
         .itemdetailpage .content article .item-content p {
             margin-top: 10px;
             margin-bottom: 20px;
+        }
+		
+		.itemdetailpage .content article .item-content p.innertitle {
+            text-align: center;
         }
 
 @media screen and (-ms-view-state: snapped) {

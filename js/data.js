@@ -215,13 +215,16 @@
                 var imageNameBig = splitImagePath[splitImagePath.length - 2] + "-540x304.jpg";
                 var imagePathSmall = imageBasePath + imageNameSmall;
                 var imagePathBig = imageBasePath + imageNameBig;
+                var bu = teaserImageEl.querySelector("bu").textContent;                
+                var imageCopyright = teaserImageEl.querySelector("copyright").textContent;                
                 var articleLink = teaser.getAttribute("href");
 
                 // Store the teaser element info we care about in the array.
                 teaserElements.push({
                     group: ressort, key: ressort.title, title: teaserTitle,
                     author: teaserAuthor, pubDate: teaserDate, articleLink: articleLink,
-                    backgroundImage: imagePathBig, content: staticContent, indexTest: index
+                    backgroundImage: imagePathBig, content: staticContent, indexTest: index,
+                    caption: bu, copyright: imageCopyright
                 });
 
                 index++;
