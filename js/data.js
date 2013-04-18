@@ -103,7 +103,7 @@
                 title: 'Kultur', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
                 acquireSyndication: acquireSyndication, dataPromise: null
-            }/*,
+            },
             {
                 key: "ressort07", url: 'http://xml.zeit.de/wirtschaft/index',
                 title: 'Wirtschaft', subtitle: 'subtitle', updated: 'tbd',
@@ -151,7 +151,7 @@
                 title: 'Sport', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
                 acquireSyndication: acquireSyndication, dataPromise: null
-            }*/
+            }
 
         ]
         // Get the content for each ressort in the ressorts array.

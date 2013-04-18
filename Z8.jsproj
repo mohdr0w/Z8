@@ -47,7 +47,10 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>de-DE</DefaultLanguage>
-    <PackageCertificateKeyFile>GridTest2_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Z8_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>C:\Users\Malte\Desktop\z8\</AppxPackageDir>
+    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
