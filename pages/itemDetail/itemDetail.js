@@ -38,7 +38,7 @@
                     //turn "interview mode" on/off
                     if (paragraphs[n].querySelector("strong") != null) {
                         strong = paragraphs[n].querySelector("strong");
-                        if (strong.textContent == "ZEIT:" || strong.textContent == "DIE ZEIT:" || strong.textContent == "ZEIT ONLINE" || strong.textContent == "ZEIT ONLINE:") {
+                        if (strong.textContent == "ZEIT:" || strong.textContent == "DIE ZEIT:" || strong.textContent == "ZEIT ONLINE" || strong.textContent == "ZEIT ONLINE:" || strong.textContent == "ZEIT Campus:") {
                             isInterview = true;
                             if (strong.textContent == "ZEIT ONLINE") {
                                 setColon = true;

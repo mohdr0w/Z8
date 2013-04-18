@@ -11,6 +11,12 @@
         // Diese Funktion wird immer aufgerufen, wenn ein Benutzer zu dieser Seite wechselt. Sie
         // füllt die Seitenelemente mit den Daten der App auf.
         ready: function (element, options) {
+
+            if (Global.titlesAreOn == false) {
+                Global.titlesAreOn = true;
+                Global.titleToggle();
+            }
+
             var listView = element.querySelector(".itemslist").winControl;
             var group = (options && options.groupKey) ? Data.resolveGroupReference(options.groupKey) : Data.groups.getAt(0);
             this._items = Data.getItemsFromGroup(group);

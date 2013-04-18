@@ -17,6 +17,12 @@
         // Diese Funktion wird immer aufgerufen, wenn ein Benutzer zu dieser Seite wechselt. Sie
         // füllt die Seitenelemente mit den Daten der App auf.
         ready: function (element, options) {
+
+            if (Global.titlesAreOn == false) {
+                Global.titlesAreOn = true;
+                Global.titleToggle();
+            }
+
             var listView = element.querySelector(".groupeditemslist").winControl;             
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");
@@ -54,6 +60,12 @@
             }
         },
 
+        unload: function () {
+            // Each time the user navigates away, we store the position of the listview
+            var listView = document.querySelector(".groupeditemslist").winControl;
+            Global.scrollState.groupedItems.indexOfFirstVisible = listView.indexOfFirstVisible;
+        },
+
         // Diese Funktion aktualisiert die ListView mit den neuen Layouts.
         _initializeLayout: function (listView, viewState) {
             /// <param name="listView" value="WinJS.UI.ListView.prototype" />
@@ -75,6 +87,11 @@
                 listView.groupDataSource = groupedItemsHub.groups.dataSource;
                 listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });                
             }
+
+            //set scroll state to previous scroll state
+            msSetImmediate(function () {
+                listView.indexOfFirstVisible = Global.scrollState.groupedItems.indexOfFirstVisible || 0;
+            });
         },
 
         _itemInvoked: function (args) {
@@ -89,4 +106,17 @@
             }
         }
     });
+
+    function titleToggle() {
+        var titles = document.getElementsByClassName("item-overlay");
+        for (var i = 0; i < titles.length; i++) {
+            if (Global.titlesAreOn) {
+                titles[i].style.display = "none";
+            }
+            else {
+                titles[i].style.display = "";
+            }
+        }
+        Global.titlesAreOn = !Global.titlesAreOn;
+    };
 })();

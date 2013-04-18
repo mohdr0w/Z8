@@ -68,7 +68,7 @@
     function getRessorts() {
         // Create an object for each ressort.        
         ressorts = [
-            {
+           /* {
                 key: "ressort01", url: 'http://xml.zeit.de/index',
                 title: 'Top Stories', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
@@ -79,7 +79,7 @@
                 title: 'Digital', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
                 acquireSyndication: acquireSyndication, dataPromise: null
-            },
+            },*/
             {
                 key: "ressort03", url: 'http://xml.zeit.de/wissen/index',
                 title: 'Wissen', subtitle: 'subtitle', updated: 'tbd',

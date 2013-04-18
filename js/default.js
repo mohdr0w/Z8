@@ -6,7 +6,7 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
-    var titlesAreOn = true;  
+    //var titlesAreOn = true;  
 
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
@@ -16,6 +16,7 @@
                 document.getElementById("titleToggle").onclick = titleToggle;
                 document.getElementById("refresh").onclick = refresh;               
             } else {
+                Global.scrollState = app.sessionState.applicationState;
                 // TODO: Diese Anwendung war angehalten und wurde reaktiviert.
                 // Anwendungszustand hier wiederherstellen.
             }
@@ -40,20 +41,10 @@
         // Vorgang vor dem Anhalten der Anwendung abgeschlossen werden muss, 
         // args.setPromise() aufrufen.
         app.sessionState.history = nav.history;
+        app.sessionState.applicationState = Global.scrollState;
     };
 
-    function titleToggle() {
-        var titles = document.getElementsByClassName("item-overlay");        
-        for (var i = 0; i < titles.length; i++) {
-            if (titlesAreOn) {
-                titles[i].style.display = "none";               
-            }
-            else {
-                titles[i].style.display = "";                
-            }            
-        }
-        titlesAreOn = !titlesAreOn;
-    };
+    
 
     function refresh() {       
         //refreshing done later xD
