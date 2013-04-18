@@ -65,7 +65,6 @@
     <Content Include="js\default.js" />
     <Content Include="js\globals.js" />
     <Content Include="js\navigator.js" />
-    <Content Include="js\scrollState.js" />
     <Content Include="pages\itemDetail\itemDetail.css" />
     <Content Include="pages\itemDetail\itemDetail.html" />
     <Content Include="pages\itemDetail\itemDetail.js" />
