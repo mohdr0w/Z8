@@ -5,7 +5,8 @@
     var appViewState = Windows.UI.ViewManagement.ApplicationViewState;
     var nav = WinJS.Navigation;
     var ui = WinJS.UI;
-    var groupedItemsHub;  
+    var groupedItemsHub;
+    var listViewCompleteCounter = 0;
 
     ui.Pages.define("/pages/groupedItems/groupedItems.html", {
         // Navigiert zur groupHeaderPage. Aufgerufen von den groupHeaders,
@@ -27,6 +28,17 @@
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
+
+
+            listView.onloadingstatechanged = function () {
+                if (listView.loadingState == "itemsLoaded") {                    
+                    if (listViewCompleteCounter == 1) {                        
+                        var loadingRing = document.getElementById("loadingRing");
+                        loadingRing.style.display = "none";
+                    }
+                    listViewCompleteCounter++;
+                }
+            };
 
             // Tastenkombination (STRG + ALT + G) festlegen, um zur aktuellen
             // Gruppe zu navigieren, wenn nicht im angedockten Modus.
