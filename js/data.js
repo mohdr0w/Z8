@@ -79,7 +79,7 @@
                 title: 'Digital', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
                 acquireSyndication: acquireSyndication, dataPromise: null
-            },*/
+            },
             {
                 key: "ressort03", url: 'http://xml.zeit.de/wissen/index',
                 title: 'Wissen', subtitle: 'subtitle', updated: 'tbd',
@@ -115,7 +115,7 @@
                 title: 'Gesellschaft', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
                 acquireSyndication: acquireSyndication, dataPromise: null
-            },
+            },*/
             {
                 key: "ressort09", url: 'http://xml.zeit.de/studium/index',
                 title: 'Studium', subtitle: 'subtitle', updated: 'tbd',
@@ -197,7 +197,7 @@
             var teaser = teasers[teaserIndex];
 
             //no video teaser and no teasers which link to blog articles (also the second teaser of "double-lead" is not displayed)
-            if (teaser.getAttribute("type") != "video" && teaser.getAttribute("ns0:href") == null) {
+            if (teaser.getAttribute("type") != "video" && teaser.getAttribute("ns0:href") == null && teaser.querySelector("image") != null) {
 
                 // Get the title, author, and date published.
                 var teaserTitle = teaser.querySelector("title").textContent;            

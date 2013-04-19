@@ -33,7 +33,7 @@
             listView.onloadingstatechanged = function () {
                 if (listView.loadingState == "itemsLoaded") {                    
                     if (listViewCompleteCounter == 1) {                        
-                        var loadingRing = document.getElementById("loadingRing");
+                        var loadingRing = document.getElementById("loadingRing");                        
                         loadingRing.style.display = "none";
                     }
                     listViewCompleteCounter++;

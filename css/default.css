@@ -11,10 +11,31 @@
     width: 100%;
 }
 
-progress{
+progress.withText
+{
+    color: inherit; 
+    vertical-align: text-bottom;
+}
+
+.progressRingText
+{
+    font-family: "Segoe UI";
+}
+
+.progressRingText
+{
+    font-size: 20pt;   
+	line-height: 24pt;
 	position: fixed;	
 	top: 50%;
 	left: 50%;
+	margin-left: -75px;
+	margin-top: -21px;	
+}
+
+.progressRingText progress
+{
+    margin-right: 10px;
 }
 
     .fragment header[role=banner] {
