@@ -24,49 +24,24 @@
     });
 
     function getContent(link) {
-        return WinJS.xhr({ url: link }).then(function (article) {
-            var isInterview = false;
+        return WinJS.xhr({ url: link }).then(function (article) {           
             var articleContent = "";
             var paragraphs = article.responseXML.querySelectorAll("division[type='page'] p");
 
             for (var n = 0; n < paragraphs.length; n++) {
-                //exlude paragraphs from info boxes
-                if (paragraphs[n].parentNode.parentNode.parentNode.parentNode.nodeName != "infobox") {
-                    var interviewPartText = "";
-                    var setColon;
-                    var strong = null;
-                    //turn "interview mode" on/off
-                    if (paragraphs[n].querySelector("strong") != null) {
-                        strong = paragraphs[n].querySelector("strong");
-                        if (strong.textContent == "ZEIT:" || strong.textContent == "DIE ZEIT:" || strong.textContent == "ZEIT ONLINE" || strong.textContent == "ZEIT ONLINE:" || strong.textContent == "ZEIT Campus:") {
-                            isInterview = true;
-                            if (strong.textContent == "ZEIT ONLINE") {
-                                setColon = true;
-                            } 
-                        }
-                    } else {
-                        isInterview = false;
-                        setColon = false;
-                    }
-                    
-                    if (strong != null && isInterview == false) {
-                        //Zwischenüberschrift
-                        articleContent = articleContent + "<p class='innertitle'><strong>" + strong.textContent + "</strong><p>";
-                    } else if (strong != null && isInterview == true) {
-                        //interview mode: get all text after the first ":" 
-                        var pSplit = paragraphs[n].textContent.split(":");
-                        for (var i = 1; i < pSplit.length; i++) {
-                            interviewPartText = interviewPartText + pSplit[i];
-                        }
-                        if (setColon) {
-                            articleContent = articleContent + "<p><strong>" + strong.textContent + ":</strong>" + interviewPartText + "</p>";
-                        } else {
-                            articleContent = articleContent + "<p><strong>" + strong.textContent + "</strong>" + interviewPartText + "</p>";
-                        }                        
-                    }else {
-                        //normaler artikel absatz
-                        articleContent = articleContent + "<p>" + paragraphs[n].textContent + "</p>";
-                    }
+                //exlude info box paragraphs
+                if (paragraphs[n].parentNode.parentNode.parentNode.parentNode.nodeName != "infobox") {   
+                    var xmlText = new XMLSerializer().serializeToString(paragraphs[n]);
+                    if (paragraphs[n].querySelector("a") != null) {
+                        var numberOfLinks = paragraphs[n].querySelectorAll("a").length;
+                        for (var i = 0; i < numberOfLinks; i++) {
+                            var rx = new RegExp("<a[^<>]+>", "i");
+                            xmlText = xmlText.replace(rx, "");
+                            rx = new RegExp("</a>", "i");
+                            xmlText = xmlText.replace(rx, "");
+                        }                       
+                    }                  
+                    articleContent = articleContent + xmlText;
                 }
             }
             return articleContent;
