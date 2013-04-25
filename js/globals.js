@@ -9,6 +9,7 @@
 
     WinJS.Namespace.define("Global", {
         titlesAreOn: true,
+        fontSizeIndex: 0,
         titleToggle: titleToggle,
         scrollState: scrollState
     });   
