@@ -5,6 +5,7 @@
         // Diese Funktion wird immer aufgerufen, wenn ein Benutzer zu dieser Seite wechselt. Sie
         // füllt die Seitenelemente mit den Daten der App auf.
         ready: function (element, options) {
+            setFontSize(Global.fontSizeIndex);
             var item = options && options.item ? Data.resolveItemReference(options.item) : Data.items.getAt(0);
             element.querySelector(".titlearea .pagetitle").textContent = item.group.title;
             element.querySelector("article .item-title").textContent = item.title;
