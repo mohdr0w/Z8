@@ -223,7 +223,7 @@
                 teaserElements.push({
                     group: ressort, key: ressort.title, title: teaserTitle,
                     author: teaserAuthor, pubDate: teaserDate, articleLink: articleLink,
-                    backgroundImage: imagePathBig, content: staticContent, indexTest: index,
+                    backgroundImage: imagePathBig, teaserText: staticContent, indexTest: index,
                     caption: bu, copyright: imageCopyright
                 });
 

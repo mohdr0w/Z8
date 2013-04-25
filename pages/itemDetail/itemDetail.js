@@ -8,15 +8,23 @@
             var item = options && options.item ? Data.resolveItemReference(options.item) : Data.items.getAt(0);
             element.querySelector(".titlearea .pagetitle").textContent = item.group.title;
             element.querySelector("article .item-title").textContent = item.title;
-            element.querySelector("article .item-subtitle").textContent = item.pubDate;
+            element.querySelector("article .item-subtitle").textContent = item.teaserText;
             element.querySelector("article .item-image").src = item.backgroundImage;
             element.querySelector("article .image-bu").textContent = item.caption;
             element.querySelector("article .image-copyright").textContent = item.copyright;
             element.querySelector("article .item-image").alt = item.pubDate;
-            element.querySelector("article .item-content").innerHTML = item.content;
+            element.querySelector("article .item-content").innerHTML = item.teaserText;
 
             getContent(item.articleLink).then(function (content) {
-                element.querySelector("article .item-content").innerHTML = content;
+                element.querySelector("article .item-content").innerHTML = content[0];
+
+                var author;
+                if (content[1] != "") {
+                    author = "von " + content[1] + " | ";
+                } else {
+                    author = "";
+                }
+                element.querySelector("article .meta-info").textContent = author + "Quelle: " + content[2] + " | " + item.pubDate;
             });
 
             element.querySelector(".content").focus();
@@ -25,7 +33,8 @@
 
     function getContent(link) {
         return WinJS.xhr({ url: link }).then(function (article) {           
-            var articleContent = "";
+            var articleData = [];
+            var textContent = "";
             var paragraphs = article.responseXML.querySelectorAll("division[type='page'] p");
 
             for (var n = 0; n < paragraphs.length; n++) {
@@ -41,10 +50,33 @@
                             xmlText = xmlText.replace(rx, "");
                         }                       
                     }                  
-                    articleContent = articleContent + xmlText;
+                    textContent = textContent + xmlText;
                 }
             }
-            return articleContent;
+            articleData.push(textContent);
+
+            var author;
+            if (article.responseXML.querySelector("attribute[name='author']")) {
+                author = article.responseXML.querySelector("attribute[name='author']").textContent;
+            } else {
+                author = "";
+            }
+            
+            articleData.push(author);
+
+            var quelle;
+            if (article.responseXML.querySelector("attribute[name='product-name']")) {
+                quelle = article.responseXML.querySelector("attribute[name='product-name']").textContent;
+            } else if (article.responseXML.querySelector("attribute[name='copyrights']")) {
+                quelle = article.responseXML.querySelector("attribute[name='copyrights']").textContent;
+            } else {
+                quelle = "ZEIT ONLINE";
+            }
+           
+            articleData.push(quelle);
+
+
+            return articleData;
         });
     }
 

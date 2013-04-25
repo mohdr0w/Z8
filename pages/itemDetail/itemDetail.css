@@ -28,6 +28,8 @@
         .itemdetailpage .content article header .item-subtitle {
             margin-bottom: 16px;
             margin-top: 0;
+            font-family: "Segoe UI";
+            font-size:18px;
         }
 
         .itemdetailpage .content article .image-copyright {            
