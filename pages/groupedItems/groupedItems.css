@@ -71,9 +71,31 @@
         -ms-grid-rows: 1fr 90px;
         display: -ms-grid;
         height: 154px;
-        width: 275px;
+        width: 275px;        
     }
-
+	
+	.groupeditemspage .groupeditemslist .semantic-item {       
+        height: 450px;
+        width: 180px; 
+		margin-left: 5px; 
+		margin-top: 50px;
+		background-color: #ffffff; 
+		color: rgb(29, 29, 29);     
+    }
+	
+	.groupeditemspage .groupeditemslist .semantic-item .item-image {       
+        margin-top: 80px;   
+    }
+	
+	.groupeditemspage .groupeditemslist .semantic-item .group-title {       
+		text-align: center;	
+		padding-top:50px;		  		   
+    }
+	
+	.groupeditemspage .groupeditemslist .semantic-item .group-title h4 {       
+		font-size: 25px;		  		   
+    }
+	
         .groupeditemspage .groupeditemslist .item .item-image {
             -ms-grid-row-span: 2;
         }

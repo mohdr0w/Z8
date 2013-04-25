@@ -32,6 +32,7 @@
             listView.groupDataSource = pageList.groups.dataSource;
             listView.groupHeaderTemplate = element.querySelector(".headertemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
+            
 
             this._initializeLayout(listView, Windows.UI.ViewManagement.ApplicationView.value);
             listView.element.focus();

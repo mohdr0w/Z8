@@ -15,6 +15,12 @@
             nav.navigate("/pages/groupDetail/groupDetail.html", { groupKey: key });
         },              
 
+        //go direct to group detail page from semantic zoom (note: uncomment also line with function call)
+        /*groupInvoked: function (args) {
+            var group = Data.groups.getAt(args.detail.itemIndex);
+            nav.navigate("/pages/groupDetail/groupDetail.html", { groupKey: group.key });
+        },*/
+
         // Diese Funktion wird immer aufgerufen, wenn ein Benutzer zu dieser Seite wechselt. Sie
         // füllt die Seitenelemente mit den Daten der App auf.
         ready: function (element, options) {
@@ -29,6 +35,12 @@
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
+            var listViewZoomOut = element.querySelector(".groupeditemslistZoomOut").winControl;
+            var semanticZoom = element.querySelector(".semanticZoom").winControl;
+            listViewZoomOut.itemTemplate = element.querySelector(".semanticZoomOut");
+
+            //go direct to group detail page from semantic zoom (note: uncomment also function)
+            //listViewZoomOut.oniteminvoked = this.groupInvoked.bind(this);
 
             listView.onloadingstatechanged = function () {
                 if (listView.loadingState == "itemsLoaded") {                    
@@ -51,7 +63,7 @@
                 }
             }.bind(this), true);
 
-            this._initializeLayout(listView, appView.value);
+            this._initializeLayout(listView, listViewZoomOut, semanticZoom, appView.value);
             listView.element.focus();
         },
 
@@ -60,6 +72,10 @@
             /// <param name="element" domElement="true" />
 
             var listView = element.querySelector(".groupeditemslist").winControl;
+
+            var listViewZoomOut = element.querySelector(".groupeditemslistZoomOut").winControl;
+            var semanticZoom = element.querySelector(".semanticZoom").winControl;
+
             if (lastViewState !== viewState) {
                 if (lastViewState === appViewState.snapped || viewState === appViewState.snapped) {
                     var handler = function (e) {
@@ -67,7 +83,12 @@
                         e.preventDefault();
                     }
                     listView.addEventListener("contentanimating", handler, false);
-                    this._initializeLayout(listView, viewState);
+                    this._initializeLayout(listView, listViewZoomOut, semanticZoom, viewState);
+                }
+
+                if (lastViewState === appViewState.snapped) {
+                    semanticZoom.zoomedOut = true;
+                    semanticZoom.forceLayout();
                 }
             }
         },
@@ -79,13 +100,17 @@
         },
 
         // Diese Funktion aktualisiert die ListView mit den neuen Layouts.
-        _initializeLayout: function (listView, viewState) {
+        _initializeLayout: function (listView, listViewZoomOut, semanticZoom, viewState) {
             /// <param name="listView" value="WinJS.UI.ListView.prototype" />
 
             if (viewState === appViewState.snapped) {
                 listView.itemDataSource = Data.groups.dataSource;
                 listView.groupDataSource = null;
                 listView.layout = new ui.ListLayout();
+
+                semanticZoom.zoomedOut = false;
+                semanticZoom.forceLayout();
+                semanticZoom.locked = true;
             } else {
 
                 //get filtered filtered list for the "hub", the number specifies the number of elements displayed
@@ -97,7 +122,12 @@
 
                 listView.itemDataSource = groupedItemsHub.dataSource;
                 listView.groupDataSource = groupedItemsHub.groups.dataSource;
-                listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });                
+                listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
+
+                listViewZoomOut.itemDataSource = groupedItemsHub.groups.dataSource;
+                listViewZoomOut.layout = new ui.GridLayout({ maxRows: 1 });
+                semanticZoom.forceLayout();
+                semanticZoom.locked = false;
             }
 
             //set scroll state to previous scroll state

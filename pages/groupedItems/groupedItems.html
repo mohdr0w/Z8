@@ -33,6 +33,14 @@
             </div>
         </div>
     </div>
+    <div class="semanticZoomOut" data-win-control="WinJS.Binding.Template">		
+        <div class="semantic-item">            
+            <div class="group-title">                
+                <h4 class="item-title" data-win-bind="textContent: title"></h4> 
+				<img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />               
+            </div>
+        </div>
+    </div>
 
     <!-- Der Inhalt, der geladen und angezeigt wird. -->
     <div class="fragment groupeditemspage">
@@ -41,9 +49,12 @@
             <h1 class="titlearea win-type-ellipsis">
                 <span class="pagetitle">Z8</span>								
             </h1>
-        </header>
-        <section aria-label="Main content" role="main">  			          
-            <div class="groupeditemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+        </header>       
+        <section aria-label="Main content" role="main">
+            <div class="semanticZoom" data-win-control="WinJS.UI.SemanticZoom" data-win-options="{ zoomFactor: 0.5, initiallyZoomedOut: false }" style="height: 100%">
+                <div class="groupeditemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{selectionMode: 'none'}"></div>
+                <div class="groupeditemslistZoomOut groupeditemslist" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{selectionMode: 'none'}"></div>
+            </div>
         </section>
     </div>
 </body>

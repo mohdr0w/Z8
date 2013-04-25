@@ -68,7 +68,7 @@
     function getRessorts() {
         // Create an object for each ressort.        
         ressorts = [
-           /* {
+            {
                 key: "ressort01", url: 'http://xml.zeit.de/index',
                 title: 'Top Stories', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
@@ -115,7 +115,7 @@
                 title: 'Gesellschaft', subtitle: 'subtitle', updated: 'tbd',
                 backgroundImage: 'tbd', articleLink: "tdb",
                 acquireSyndication: acquireSyndication, dataPromise: null
-            },*/
+            },
             {
                 key: "ressort09", url: 'http://xml.zeit.de/studium/index',
                 title: 'Studium', subtitle: 'subtitle', updated: 'tbd',
@@ -192,6 +192,7 @@
     function getItemsFromXml(ressortXML, teaserElements, ressort) {
         var teasers = ressortXML.querySelectorAll("region[area='lead'] container > block:first-child");
         var index = 0;
+        var semanticZoomImage = Math.floor((Math.random() * 6) + 1);
         // Process each ressort teaser.
         for (var teaserIndex = 0; teaserIndex < teasers.length; teaserIndex++) {
             var teaser = teasers[teaserIndex];
@@ -218,6 +219,11 @@
                 var bu = teaserImageEl.querySelector("bu").textContent;                
                 var imageCopyright = teaserImageEl.querySelector("copyright").textContent;                
                 var articleLink = teaser.getAttribute("href");
+
+                
+                if (teaserIndex == semanticZoomImage) {
+                    ressort.backgroundImage = imagePathBig;
+                }                
 
                 // Store the teaser element info we care about in the array.
                 teaserElements.push({
