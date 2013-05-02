@@ -5,6 +5,11 @@
         // Diese Funktion wird immer aufgerufen, wenn ein Benutzer zu dieser Seite wechselt. Sie
         // füllt die Seitenelemente mit den Daten der App auf.
         ready: function (element, options) {
+            appbar.winControl.disabled = false;            
+            appbar.winControl.hideCommands(["titleToggle"]);
+            appbar.winControl.hideCommands(["refresh"]);
+            appbar.winControl.showCommands(["fontSizeBt"]);             
+
             setFontSize(Global.fontSizeIndex);
             var item = options && options.item ? Data.resolveItemReference(options.item) : Data.items.getAt(0);
             element.querySelector(".titlearea .pagetitle").textContent = item.group.title;
@@ -28,7 +33,7 @@
                 element.querySelector("article .meta-info").textContent = author + "Quelle: " + content[2] + " | " + item.pubDate;
             });
 
-            element.querySelector(".content").focus();
+            element.querySelector(".content").focus();           
         }
     });
 
@@ -40,7 +45,7 @@
 
             for (var n = 0; n < paragraphs.length; n++) {
                 //exlude info box paragraphs
-                if (paragraphs[n].parentNode.parentNode.parentNode.parentNode.nodeName != "infobox") {   
+                if (paragraphs[n].parentNode.parentNode.parentNode.parentNode.nodeName != "infobox" && paragraphs[n].parentNode.getAttribute("class") != "twitter-tweet"){
                     var xmlText = new XMLSerializer().serializeToString(paragraphs[n]);
                     if (paragraphs[n].querySelector("a") != null) {
                         var numberOfLinks = paragraphs[n].querySelectorAll("a").length;

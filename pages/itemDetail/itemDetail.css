@@ -59,6 +59,19 @@
             text-align: center;
         }
 
+ .itemdetailpage .content article .meta-info {
+	color: #8f8f8f;         
+ }
+
+ .itemdetailpage .content article hr {
+     text-align: left;
+     width: 90%;
+	 border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);        
+ }
+ 
 @media screen and (-ms-view-state: snapped) {
     .itemdetailpage .content {
         -ms-grid-row: 2;

@@ -23,14 +23,15 @@
     <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/groupedItems/groupedItems.html'}"></div>	
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
         <button id="titleToggle" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'titleToggle', section:'global', label:'Title Toggle', icon:'switch'}"></button>
-        <button id="fontSize" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fontSize', section:'global', label:'Font Size', icon:'fontsize'}"></button>        
+        <button id="fontSizeBt" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fontSizeBt', section:'global', label:'Font Size', icon:'fontsize'}"></button>                
         <button id="refresh" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'refresh', section:'global', label:'Refresh', icon:'sync'}"></button>
         
     </div> 
 
     <div id="fontFlyout" data-win-control="WinJS.UI.Menu">        
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'increase',label:'A+', icon:'sync'}"></button>
-        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'decrease',label:'A-', icon:'sync'}"></button>
+        <button id="increase" data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'increase',label:'A+', icon:'sync'}"></button>
+        <button id="decrease" data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'decrease',label:'A-', icon:'sync'}"></button>
+        <button id="reset" data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'reset',label:'Reset', icon:'sync'}"></button>
     </div>
 </body>
 </html>

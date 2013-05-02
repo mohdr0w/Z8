@@ -14,7 +14,7 @@
                 // TODO: Diese Anwendung wurde neu eingeführt. Die Anwendung
                 // hier initialisieren.               
                 document.getElementById("titleToggle").onclick = titleToggle;
-                document.getElementById("fontSize").onclick = showFontMenu;                
+                document.getElementById("fontSizeBt").onclick = showFontMenu;
                 document.getElementById("refresh").onclick = refresh;               
             } else {
                 Global.scrollState = app.sessionState.applicationState;
@@ -36,6 +36,7 @@
 
             document.getElementById("increase").addEventListener("click", increaseFontSize, false);
             document.getElementById("decrease").addEventListener("click", decreaseFontSize, false);
+            document.getElementById("reset").addEventListener("click", resetFontSize, false);
         }
     });
 

@@ -12,6 +12,11 @@
         // füllt die Seitenelemente mit den Daten der App auf.
         ready: function (element, options) {
 
+            appbar.winControl.disabled = false;           
+            appbar.winControl.hideCommands(["fontSizeBt"]);
+            appbar.winControl.hideCommands(["refresh"]);
+            appbar.winControl.showCommands(["titleToggle"]);
+
             if (Global.titlesAreOn == false) {
                 Global.titlesAreOn = true;
                 Global.titleToggle();

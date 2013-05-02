@@ -76,7 +76,7 @@
 	
 	.groupeditemspage .groupeditemslist .semantic-item {       
         height: 450px;
-        width: 180px; 
+        width: 220px; 
 		margin-left: 5px; 
 		margin-top: 50px;
 		background-color: #ffffff; 
@@ -84,12 +84,14 @@
     }
 	
 	.groupeditemspage .groupeditemslist .semantic-item .item-image {       
-        margin-top: 80px;   
+        margin-top: 80px;  
+		margin-left: -155px; 
     }
 	
 	.groupeditemspage .groupeditemslist .semantic-item .group-title {       
 		text-align: center;	
-		padding-top:50px;		  		   
+		padding-top:50px;
+		overflow: hidden;		  		   
     }
 	
 	.groupeditemspage .groupeditemslist .semantic-item .group-title h4 {       
