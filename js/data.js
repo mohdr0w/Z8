@@ -198,8 +198,8 @@
         for (var teaserIndex = 0; teaserIndex < teasers.length; teaserIndex++) {
             var teaser = teasers[teaserIndex];
 
-            //no video teaser and no teasers which link to blog articles (also the second teaser of "double-lead" is not displayed)
-            if (teaser.getAttribute("type") != "video" && teaser.getAttribute("ns0:href") == null && teaser.querySelector("image") != null) {
+            //no video teaser, no gallery, no teasers which link to blog articles (also the second teaser of "double-lead" is not displayed), no teaser without image, no quiz teaser
+            if (teaser.getAttribute("contenttype") != "video" && teaser.getAttribute("ns0:href") == null && teaser.querySelector("image") != null && teaser.getAttribute("contenttype") != "gallery" && teaser.getAttribute("contenttype") != "quiz") {
 
                 // Get the title, author, and date published.
                 var teaserTitle = teaser.querySelector("title").textContent;            
