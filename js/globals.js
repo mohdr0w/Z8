@@ -24,9 +24,8 @@ function titleToggle() {
         else {
             titles[i].style.display = "";
         }
-    }
+    }  
     Global.titlesAreOn = !Global.titlesAreOn;
-
 };
 
 function showFontMenu() {

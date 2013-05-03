@@ -152,18 +152,5 @@
                 nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
             }
         }
-    });
-
-    function titleToggle() {
-        var titles = document.getElementsByClassName("item-overlay");
-        for (var i = 0; i < titles.length; i++) {
-            if (Global.titlesAreOn) {
-                titles[i].style.display = "none";
-            }
-            else {
-                titles[i].style.display = "";
-            }
-        }
-        Global.titlesAreOn = !Global.titlesAreOn;
-    };
+    });    
 })();
