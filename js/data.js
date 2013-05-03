@@ -192,7 +192,8 @@
     function getItemsFromXml(ressortXML, teaserElements, ressort) {
         var teasers = ressortXML.querySelectorAll("region[area='lead'] container > block:first-child");
         var index = 0;
-        var semanticZoomImage = Math.floor((Math.random() * 6) + 1);
+        var semanticZoomImage = Math.floor((Math.random() * 6));
+        var zoomImageCounter = 0;
         // Process each ressort teaser.
         for (var teaserIndex = 0; teaserIndex < teasers.length; teaserIndex++) {
             var teaser = teasers[teaserIndex];
@@ -221,9 +222,10 @@
                 var articleLink = teaser.getAttribute("href");
 
                 
-                if (teaserIndex == semanticZoomImage) {
+                if (zoomImageCounter == semanticZoomImage) {
                     ressort.backgroundImage = imagePathBig;
-                }                
+                }
+                zoomImageCounter++;
 
                 // Store the teaser element info we care about in the array.
                 teaserElements.push({
