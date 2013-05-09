@@ -14,7 +14,7 @@
             var item = options && options.item ? Data.resolveItemReference(options.item) : Data.items.getAt(0);
             element.querySelector(".titlearea .pagetitle").textContent = item.group.title;
             element.querySelector("article .item-title").textContent = item.title;
-            element.querySelector("article .item-subtitle").textContent = item.teaserText;
+            element.querySelector("article .item-subtitle").innerHTML = item.teaserText;
             element.querySelector("article .item-image").src = item.backgroundImage;
             element.querySelector("article .image-bu").textContent = item.caption;
             element.querySelector("article .image-copyright").textContent = item.copyright;
