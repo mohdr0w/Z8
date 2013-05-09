@@ -73,6 +73,10 @@
  }
  
 @media screen and (-ms-view-state: snapped) {
+	.itemdetailpage{
+		display: none;
+	}
+	
     .itemdetailpage .content {
         -ms-grid-row: 2;
         -ms-grid-row-span: 1;

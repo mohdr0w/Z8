@@ -147,6 +147,10 @@
 }
 
 @media screen and (-ms-view-state: snapped) {
+	.groupeditemspage{
+		display: none;
+	}
+	
     .groupeditemspage section[role=main] {
         -ms-grid-row: 2;
         -ms-grid-row-span: 1;
