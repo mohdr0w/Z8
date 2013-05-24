@@ -217,8 +217,13 @@
                 var imageNameBig = splitImagePath[splitImagePath.length - 2] + "-540x304.jpg";
                 var imagePathSmall = imageBasePath + imageNameSmall;
                 var imagePathBig = imageBasePath + imageNameBig;
-                var bu = teaserImageEl.querySelector("bu").textContent;                
-                var imageCopyright = teaserImageEl.querySelector("copyright").textContent;                
+                var bu = teaserImageEl.querySelector("bu").textContent;
+                var imageCopyright = "";
+                if (teaserImageEl.querySelector("copyright") != null) {
+                    imageCopyright = teaserImageEl.querySelector("copyright").textContent;
+                } else {
+                    console.log(teaser.getAttribute("href"));
+                }
                 var articleLink = teaser.getAttribute("href");
 
                 
