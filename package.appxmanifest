@@ -15,9 +15,9 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Z8" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Z8" ForegroundText="light" BackgroundColor="#464646">
-        <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+      <VisualElements DisplayName="ZEIGHT" Logo="images\zeight_logo.png" SmallLogo="images\smalllogo.png" Description="Z8" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" WideLogo="images/wide_logo.png" />
+        <SplashScreen Image="images\zeight_splash.png" BackgroundColor="#FFFFFF" />
       </VisualElements>
     </Application>
   </Applications>

@@ -11,15 +11,11 @@
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
-                // TODO: Diese Anwendung wurde neu eingeführt. Die Anwendung
-                // hier initialisieren.               
+                // Initialisierung - registrierung der click handler          
                 document.getElementById("titleToggle").onclick = titleToggle;
-                document.getElementById("fontSizeBt").onclick = showFontMenu;
-                document.getElementById("refresh").onclick = refresh;               
+                document.getElementById("fontSizeBt").onclick = showFontMenu; 
             } else {
                 Global.scrollState = app.sessionState.applicationState;
-                // TODO: Diese Anwendung war angehalten und wurde reaktiviert.
-                // Anwendungszustand hier wiederherstellen.
             }
 
             if (app.sessionState.history) {
@@ -34,6 +30,7 @@
                 }
             }));
 
+            //eventlistener für die Schriftgroesse registrieren
             document.getElementById("increase").addEventListener("click", increaseFontSize, false);
             document.getElementById("decrease").addEventListener("click", decreaseFontSize, false);
             document.getElementById("reset").addEventListener("click", resetFontSize, false);
@@ -41,10 +38,6 @@
     });
 
     app.oncheckpoint = function (args) {
-        // TODO: Diese Anwendung wird gleich angehalten. Jeden Zustand,
-        // der über Anhaltevorgänge hinweg beibehalten muss, hier speichern. Wenn ein asynchroner 
-        // Vorgang vor dem Anhalten der Anwendung abgeschlossen werden muss, 
-        // args.setPromise() aufrufen.
         app.sessionState.history = nav.history;
         app.sessionState.applicationState = Global.scrollState;
     };

@@ -15,6 +15,7 @@
     });   
 })();
 
+//function to turn titles off and on
 function titleToggle() {
     var titles = document.getElementsByClassName("item-overlay");
     for (var i = 0; i < titles.length; i++) {
@@ -28,6 +29,7 @@ function titleToggle() {
     Global.titlesAreOn = !Global.titlesAreOn;
 };
 
+//font menu functions
 function showFontMenu() {
     showFlyout(fontFlyout, fontSizeBt, "bottom");
 }
@@ -40,10 +42,7 @@ function hideFlyout(flyout) {
     flyout.winControl.hide();
 }
 
-function refresh() {
-    //refreshing done later xD
-};
-
+//functions to increase, decrease or set (reset) font size
 function increaseFontSize() {
     var article = document.getElementById("fontSize");
     var caption = document.getElementById("caption");

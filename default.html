@@ -19,20 +19,20 @@
     <script src="/js/default.js"></script>
 </head>
 <body>
+    <!-- Bild für nichtvorhandenen Snapped mode anzeigen -->
 	<div class="snapped-view">
         <p>Snapped-View not available</p>
         <img src="images/grumpy_sorry.jpg" />
-
 	</div>	
 	<label class="progressRingText" id="loadingRing"><progress class="win-ring win-medium withText"></progress>Loading</label>		
     <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/groupedItems/groupedItems.html'}"></div>	
+    <!-- Untere Menüleiste -->
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
         <button id="titleToggle" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'titleToggle', section:'global', label:'Title Toggle', icon:'switch'}"></button>
-        <button id="fontSizeBt" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fontSizeBt', section:'global', label:'Font Size', icon:'fontsize'}"></button>                
-        <button id="refresh" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'refresh', section:'global', label:'Refresh', icon:'sync'}"></button>
-        
+        <button id="fontSizeBt" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'fontSizeBt', section:'global', label:'Font Size', icon:'fontsize'}"></button>       
     </div> 
 
+    <!-- Menü für die Schriftgroesse im Artikel -->
     <div id="fontFlyout" data-win-control="WinJS.UI.Menu">        
         <button id="increase" data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'increase',label:'A+', icon:'sync'}"></button>
         <button id="decrease" data-win-control="WinJS.UI.MenuCommand" data-win-options="{id:'decrease',label:'A-', icon:'sync'}"></button>

@@ -99,7 +99,7 @@
         },
 
         unload: function () {
-            // Each time the user navigates away, we store the position of the listview
+            // Each time the user navigates away, the position of the listview is stored
             var listView = document.querySelector(".groupeditemslist").winControl;
             Global.scrollState.groupedItems.indexOfFirstVisible = listView.indexOfFirstVisible;
         },
