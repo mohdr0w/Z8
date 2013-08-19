@@ -26,8 +26,7 @@
         ready: function (element, options) {
 
             appbar.winControl.disabled = false;
-            appbar.winControl.hideCommands(["fontSizeBt"]);
-            appbar.winControl.showCommands(["refresh"]);           
+            appbar.winControl.hideCommands(["fontSizeBt"]);      
             appbar.winControl.showCommands(["titleToggle"]);
 
             if (Global.titlesAreOn == false) {
