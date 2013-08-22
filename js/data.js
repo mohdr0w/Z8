@@ -39,7 +39,7 @@
     //function returns clipped bindinglist for the hub
     function getClippedList(numberOfElements) {        
         return list.createFiltered(function (item) {
-            if (item.indexTest < numberOfElements) {                
+            if (item.elementIndex < numberOfElements) {                
                 return item.group.key;
             }
         });
@@ -199,7 +199,7 @@
             var teaser = teasers[teaserIndex];
 
             //no video teaser, no gallery, no teasers which link to blog articles (also the second teaser of "double-lead" is not displayed), no teaser without image, no quiz teaser            
-            if (teaser.getAttribute("contenttype") == "article") {
+            if (teaser.getAttribute("contenttype") == "article" && teaser.querySelector("image") != null) {
                 // Get the title, author, and date published.
                 var teaserTitle = teaser.querySelector("title").textContent;            
                 var teaserAuthor = "";
@@ -235,7 +235,7 @@
                 teaserElements.push({
                     group: ressort, key: ressort.title, title: teaserTitle,
                     author: teaserAuthor, pubDate: teaserDate, articleLink: articleLink,
-                    backgroundImage: imagePathBig, teaserText: staticContent, indexTest: index,
+                    backgroundImage: imagePathBig, teaserText: staticContent, elementIndex: index,
                     caption: bu, copyright: imageCopyright
                 });
 
